@@ -21,7 +21,7 @@
               </video>
             </template>
             <div
-              style="width: 100%; font-size: calc(35px + 1vw)"
+              style="width: 100%; font-size: calc(10px + 1vw)"
               class="flex flex-center"
             >
               <p

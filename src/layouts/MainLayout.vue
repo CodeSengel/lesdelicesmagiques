@@ -12,7 +12,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <q-toolbar-title> Les délices magiques </q-toolbar-title>
         <q-toggle
           v-model="darkmode"
           checked-icon="mdi-shield-moon"
