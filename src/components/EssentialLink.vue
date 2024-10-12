@@ -11,7 +11,7 @@
     @click="console.log(name, nameActive), changeItemActive(name)"
   >
     <q-item-section class="" v-if="icon" avatar>
-      <q-icon size="lg" :name="icon" />
+      <q-icon size="lg" :name="icon" :style="stylecomp" />
     </q-item-section>
 
     <q-item-section>
@@ -67,6 +67,10 @@ export default defineComponent({
     actived: {
       type: Boolean,
       default: false,
+    },
+    stylecomp: {
+      type: String,
+      default: "",
     },
   },
 });

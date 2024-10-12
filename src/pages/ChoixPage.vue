@@ -3,7 +3,7 @@
     <div class="col-12 row">
       <div class="col-12">
         <div class="col-12 polaroid">
-          <q-parallax style="height: 150px; filter: grayscale(100%)">
+          <q-parallax style="height: 100px; filter: grayscale(50%)">
             <template v-slot:media>
               <video
                 poster="https://cdn.quasar.dev/img/polina.jpg"
@@ -34,11 +34,8 @@
           </q-parallax>
         </div>
       </div>
-      <div class="col-12">
-        <q-separator size="1px" red class="q-mt-md" />
-      </div>
 
-      <div class="col-12 row q-pt-sm">
+      <div class="col-12 row">
         <div
           v-for="section in section_list"
           :key="section"
@@ -47,7 +44,7 @@
         >
           <div
             style="
-              height: 400px;
+              height: 20vh;
               width: 100%;
               border-top-left-radius: 25px;
               border-top-right-radius: 25px;
@@ -68,8 +65,21 @@
           </div>
 
           <div
-            style="height: 40px; font-size: x-large"
-            class="col-12 polaroid flex flex-center text-pink"
+            style="
+              height: 40px;
+              font-size: x-large;
+              background: linear-gradient(
+                135deg,
+                #ffdd12,
+                #00973a,
+                #69c9d0,
+                #ffdd12
+              );
+              border-radius: 2px;
+
+              color: #ffffff;
+            "
+            class="col-12 polaroid flex flex-center text-white"
           >
             {{ section.name }}
           </div>

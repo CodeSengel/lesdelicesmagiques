@@ -1,7 +1,7 @@
 <template>
-  <q-item class="text-black" clickable v-ripple tag="a" v-bind="linkProps">
+  <q-item class="" clickable v-ripple tag="a" v-bind="linkProps">
     <q-item-section v-if="icon" avatar>
-      <q-icon size="lg" :name="icon" />
+      <q-icon size="lg" :name="icon" :style="stylecomp" />
     </q-item-section>
 
     <q-item-section class="row">
@@ -46,6 +46,10 @@ export default defineComponent({
     useRouterLink: {
       type: Boolean,
       default: true,
+    },
+    stylecomp: {
+      type: String,
+      default: "",
     },
   },
   computed: {

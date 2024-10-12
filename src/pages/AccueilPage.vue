@@ -1,27 +1,19 @@
 <template>
   <q-page class="row">
     <div class="col-xs-12 flex flex-center">
-      <q-parallax :height="150">
+      <q-parallax style="height: 150px; filter: grayscale(50%)">
         <template v-slot:media>
-          <video
-            width="720"
-            height="440"
-            poster="https://cdn.quasar.dev/img/polina.jpg"
-            autoplay
-            loop
-            muted
-          >
+          <video poster="https://cdn.quasar.dev/img/polina.jpg" autoplay loop>
             <source
               type="video/webm"
-              src="https://storage.cdn-luma.com/lit_lite_inference_v1.6-xl/608a5fe4-e176-4447-8251-c8465efc3aca/35845098-1daf-46aa-8c9c-8b6d975f10dd_watermarked_video0ae73484606544de1abdeb81154b33a38.mp4"
+              src="https://storage.cdn-luma.com/lit_lite_inference_v1.6-xl/60865476-ec63-4391-8283-4f5ab6070d5f/653014ef-99c4-46a4-91e5-30500dc4f010_watermarked_video0612dd8dfa2914909b9dcc6949551b279.mp4"
             />
             <source
               type="video/mp4"
-              src="https://storage.cdn-luma.com/lit_lite_inference_v1.6-xl/608a5fe4-e176-4447-8251-c8465efc3aca/35845098-1daf-46aa-8c9c-8b6d975f10dd_watermarked_video0ae73484606544de1abdeb81154b33a38.mp4"
+              src="https://storage.cdn-luma.com/lit_lite_inference_v1.6-xl/60865476-ec63-4391-8283-4f5ab6070d5f/653014ef-99c4-46a4-91e5-30500dc4f010_watermarked_video0612dd8dfa2914909b9dcc6949551b279.mp4"
             />
           </video>
         </template>
-
         <div
           style="width: 100%; font-size: calc(10px + 1vw)"
           class="flex flex-center"
@@ -30,23 +22,22 @@
             class="q-pt-lg text-white text-center"
             style="width: 40%; background-color: rgba(0, 0, 0, 0.5)"
           >
-            <span> Les délices magiques </span> <br />
             Azul - Bienvenue - Welcome - مرحبا
           </p>
         </div>
       </q-parallax>
     </div>
     <div class="column col-12">
-      <div class="col-10 row">
+      <div class="col-11 row">
         <div class="col-md-6 col-sm-6 col-xs-12 q-pa-sm">
           <q-card bordered style="height: 100%" class="column q-pb-md">
             <q-card-section style="width: 100%" class="col-2 flex flex-center">
-              <div class="text-pink" style="font-size: calc(10px + 2vw)">
+              <div style="font-size: calc(10px + 2vw); color: #00973a">
                 Nos offres et services
               </div>
             </q-card-section>
-            <q-card-section class="col-8 column">
-              <div class="bg-red col-12 column">
+            <q-card-section class="col-7 column">
+              <div class="col-12 column">
                 <q-carousel
                   autoplay
                   arrows
@@ -106,11 +97,11 @@
                 </q-carousel>
               </div>
             </q-card-section>
-            <q-card-section class="col-2 flex flex-center">
+            <q-card-section class="col-2 text-center">
               <q-btn
                 class="q-mb-lg"
                 bordered
-                color="green"
+                color="blue"
                 :to="{ name: 'choix' }"
                 >Consulter nos offres</q-btn
               >
@@ -122,11 +113,25 @@
         <div class="col-md-6 col-sm-6 col-xs-12 q-pa-sm">
           <q-card bordered style="overflow: hidden">
             <q-card-section class="flex flex-center">
-              <div class="text-pink" style="font-size: calc(10px + 2vw)">
+              <div
+                class="text"
+                style="font-size: calc(10px + 2vw); color: #00973a"
+              >
                 Qui sommes nous ?
               </div>
             </q-card-section>
-            <q-card-section><p v-html="description"></p></q-card-section>
+            <q-card-section
+              ><p style="font-size: calc(8px + 0.5vw)" v-html="description"></p
+            ></q-card-section>
+            <q-card-section class="col-2 text-center">
+              <q-btn
+                class="q-mb-lg"
+                bordered
+                color="blue"
+                :to="{ name: 'contact' }"
+                >Nous contacter</q-btn
+              >
+            </q-card-section>
           </q-card>
         </div>
       </div>
@@ -191,3 +196,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.page {
+  background-color: #f0f0f0; /* Light grey background */
+}
+</style>
