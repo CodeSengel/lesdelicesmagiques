@@ -1,17 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf ">
-    <q-header elevated>
-      <q-toolbar
-        style="
-          background: linear-gradient(
-            135deg,
-            #ffdd12,
-            #00973a,
-            #69c9d0,
-            #ffdd12
-          );
-        "
-      >
+    <q-header>
+      <q-toolbar style="background: #c29fff" class="row">
         <q-btn
           v-if="$q.platform.is.mobile"
           flat
@@ -23,22 +13,83 @@
         />
 
         <q-toolbar-title
-          style="font-size: calc(18px + 0.5vh + 0.5vw)"
-          class="text-center text-h4 text-white"
+          style="
+            font-size: calc(14px + 2vw);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+              'Helvetica Neue', sans-serif;
+          "
+          class="text-white flex flex-center"
+          :class="$q.platform.is.mobile ? 'col-9' : 'col-6'"
         >
           Les délices magiques
         </q-toolbar-title>
-        <q-toggle
-          v-model="darkmode"
-          checked-icon="mdi-shield-moon"
-          color="dark"
-          unchecked-icon="mdi-white-balance-sunny"
-          @click="handleDarkMode()"
-        />
+        <div class="col-4 row" v-if="!$q.platform.is.mobile">
+          <q-btn-group dense flat class="col-12">
+            <q-btn
+              style="font-size: calc(1px + 1vw)"
+              class="Menubutton col-3"
+              color="#5ffbf1"
+              label="Accueil"
+              target="_self"
+              to="/"
+              dense
+              flat
+            />
+            <q-btn
+              style="font-size: calc(1px + 1vw)"
+              class="Menubutton col-3"
+              color="#5ffbf1"
+              label="Nox Choix"
+              target="_self"
+              to="choix"
+              dense
+              flat
+            />
+            <q-btn
+              style="font-size: calc(1px + 1vw)"
+              class="Menubutton col-3"
+              color="#5ffbf1"
+              label="Commander"
+              target="_self"
+              to="commande"
+              dense
+              flat
+            />
+            <q-btn
+              style="font-size: calc(1px + 1vw)"
+              class="Menubutton col-3"
+              color="#5ffbf1"
+              label="Contact"
+              target="_self"
+              to="contact"
+              dense
+              flat
+            />
+          </q-btn-group>
+        </div>
+
+        <div class="col-2 flex flex-center">
+          <q-toggle
+            size="xl"
+            v-model="darkmode"
+            checked-icon="mdi-shield-moon"
+            color="dark"
+            unchecked-icon="mdi-white-balance-sunny"
+            @click="handleDarkMode()"
+            class="col-2 flex flex-center"
+          />
+        </div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered :width="300">
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      bordered
+      :width="300"
+      v-if="$q.platform.is.mobile"
+    >
       <q-list>
         <q-item-label header> </q-item-label>
 
@@ -62,10 +113,11 @@
                 style="
                   background: linear-gradient(
                     135deg,
-                    #ffdd12,
-                    #00973a,
-                    #69c9d0,
-                    #ffdd12
+                    #f274bb,
+                    #f274bb,
+                    #d790ec,
+                    #84beff,
+                    #00ecff
                   );
                   border-radius: 20%;
                   border: solid 1px yellow;
@@ -92,7 +144,7 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view :class="darkmode ? 'bg-black' : 'bg-green'" />
+      <router-view :class="darkmode ? 'bg-black' : 'bg-pinkBackground'" />
     </q-page-container>
   </q-layout>
 </template>
@@ -109,7 +161,7 @@ const linksList = [
     caption: "Découvrir notre magasin et qui nous sommes.",
     icon: "mdi-home",
     stylecomp:
-      "background: linear-gradient(135deg, #ffdd12,#00973a, #69c9d0,#ffdd12 );border-radius: 20%; border : solid 1px yellow ; color:#ffffff ",
+      "background: linear-gradient(135deg, #f274bb,#f274bb, #d790ec,#84beff,#00ecff );border-radius: 20%; border : solid 1px yellow ; color:#ffffff ",
     name: "accueil",
     separator: false,
     active: true,
@@ -119,7 +171,7 @@ const linksList = [
     caption: "Découvrir nos choix délicieux et nos nouveautés.",
     icon: "mdi-list-box",
     stylecomp:
-      "background: linear-gradient(135deg, #ffdd12,#00973a, #69c9d0,#ffdd12 );border-radius: 20%; border : solid 1px yellow ; color:#ffffff ",
+      "background: linear-gradient(135deg, #f274bb,#f274bb, #d790ec,#84beff,#00ecff );border-radius: 20%; border : solid 1px yellow ; color:#ffffff ",
     name: "choix",
     separator: false,
   },
@@ -128,7 +180,7 @@ const linksList = [
     caption: "Passer une commande ! ",
     icon: "mdi-cart",
     stylecomp:
-      "background: linear-gradient(135deg, #ffdd12,#00973a, #69c9d0,#ffdd12 );border-radius: 20%; border : solid 1px yellow ; color:#ffffff ",
+      "background: linear-gradient(135deg, #f274bb,#f274bb, #d790ec,#84beff,#00ecff );border-radius: 20%; border : solid 1px yellow ; color:#ffffff ",
     name: "commande",
     separator: true,
   },
@@ -137,7 +189,7 @@ const linksList = [
     caption: "Contactez nous pour plus de détails",
     icon: "mdi-phone",
     stylecomp:
-      "background: linear-gradient(135deg, #ffdd12,#00973a, #69c9d0,#ffdd12 );border-radius: 20%; border : solid 1px yellow ; color:#ffffff ",
+      "background: linear-gradient(135deg, #f274bb,#f274bb, #d790ec,#84beff,#00ecff );border-radius: 20%; border : solid 1px yellow ; color:#ffffff ",
 
     name: "contact",
     separator: false,
@@ -182,7 +234,7 @@ const linksWrapedList = [
     stylecomp:
       "background: linear-gradient(135deg, #010101,#69c9d0, #FFFFFF,#ee1d52 );border-radius: 20%; color:black",
 
-    name: "https://www.instagram.com/",
+    name: "https://www.tiktok.com/@les.delices.magiques?lang=fr",
     separator: false,
     useRouterLink: false,
   },
@@ -221,3 +273,25 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.Menubutton {
+  cursor: pointer;
+  word-wrap: normal;
+  text-align: center;
+}
+.Menubutton::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #f274bb;
+  transition: width 0.3s ease;
+}
+
+.Menubutton:hover::after {
+  width: 100%;
+}
+</style>

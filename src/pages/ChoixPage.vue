@@ -2,37 +2,7 @@
   <q-page class="row">
     <div class="col-12 row">
       <div class="col-12">
-        <div class="col-12 polaroid">
-          <q-parallax style="height: 100px; filter: grayscale(50%)">
-            <template v-slot:media>
-              <video
-                poster="https://cdn.quasar.dev/img/polina.jpg"
-                autoplay
-                loop
-              >
-                <source
-                  type="video/webm"
-                  src="https://storage.cdn-luma.com/lit_lite_inference_v1.6-xl/60865476-ec63-4391-8283-4f5ab6070d5f/653014ef-99c4-46a4-91e5-30500dc4f010_watermarked_video0612dd8dfa2914909b9dcc6949551b279.mp4"
-                />
-                <source
-                  type="video/mp4"
-                  src="https://storage.cdn-luma.com/lit_lite_inference_v1.6-xl/60865476-ec63-4391-8283-4f5ab6070d5f/653014ef-99c4-46a4-91e5-30500dc4f010_watermarked_video0612dd8dfa2914909b9dcc6949551b279.mp4"
-                />
-              </video>
-            </template>
-            <div
-              style="width: 100%; font-size: calc(10px + 1vw)"
-              class="flex flex-center"
-            >
-              <p
-                class="q-pt-lg text-white flex flex-center"
-                style="width: 40%; background-color: rgba(0, 0, 0, 0.5)"
-              >
-                Nos choix
-              </p>
-            </div>
-          </q-parallax>
-        </div>
+        <div class="col-12 polaroid"></div>
       </div>
 
       <div class="col-12 row">
@@ -68,13 +38,7 @@
             style="
               height: 40px;
               font-size: x-large;
-              background: linear-gradient(
-                135deg,
-                #ffdd12,
-                #00973a,
-                #69c9d0,
-                #ffdd12
-              );
+              background-color: #c29fff;
               border-radius: 2px;
 
               color: #ffffff;

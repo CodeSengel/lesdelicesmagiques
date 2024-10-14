@@ -1,32 +1,6 @@
 <template>
   <q-page class="row">
-    <div class="col-xs-12 flex flex-center">
-      <q-parallax style="height: 150px; filter: grayscale(50%)">
-        <template v-slot:media>
-          <video poster="https://cdn.quasar.dev/img/polina.jpg" autoplay loop>
-            <source
-              type="video/webm"
-              src="https://storage.cdn-luma.com/lit_lite_inference_v1.6-xl/60865476-ec63-4391-8283-4f5ab6070d5f/653014ef-99c4-46a4-91e5-30500dc4f010_watermarked_video0612dd8dfa2914909b9dcc6949551b279.mp4"
-            />
-            <source
-              type="video/mp4"
-              src="https://storage.cdn-luma.com/lit_lite_inference_v1.6-xl/60865476-ec63-4391-8283-4f5ab6070d5f/653014ef-99c4-46a4-91e5-30500dc4f010_watermarked_video0612dd8dfa2914909b9dcc6949551b279.mp4"
-            />
-          </video>
-        </template>
-        <div
-          style="width: 100%; font-size: calc(10px + 1vw)"
-          class="flex flex-center"
-        >
-          <p
-            class="q-pt-lg text-white text-center"
-            style="width: 40%; background-color: rgba(0, 0, 0, 0.5)"
-          >
-            Azul - Bienvenue - Welcome - مرحبا
-          </p>
-        </div>
-      </q-parallax>
-    </div>
+    <div class="col-xs-12 flex flex-center"></div>
     <div class="column col-12">
       <div class="col-11 row">
         <div class="col-md-6 col-sm-6 col-xs-12 q-pa-sm">

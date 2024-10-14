@@ -144,8 +144,8 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
+        name: `Les Délices Magiques`,
+        short_name: `Les Délices Magiques`,
         description: `A Quasar Project`,
         display: "standalone",
         orientation: "portrait",
